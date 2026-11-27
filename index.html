@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>dibia — Graphic Designer</title>
+<meta name="description" content="dibia is a graphic designer: brand identity, web design and UI/UX, presented as a cosmic portfolio.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--tx:#ecebf3;--mut:#8b8ba3;--ac:#a78bfa;--d:'Bricolage Grotesque','Arial Black',Impact,sans-serif;--m:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;--t:calc(14px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}html,body{margin:0;background:#04040a;color:var(--tx);font:400 15px/1.6 system-ui,-apple-system,'Segoe UI',sans-serif}
+body{overflow-x:hidden;-webkit-tap-highlight-color:transparent}.c,.c img{-webkit-user-select:none;user-select:none}#pj{overscroll-behavior:contain}a{color:inherit}:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+#sp{height:520vh}@media(max-width:700px){#sp{height:440vh}}
+.fx{position:fixed;inset:0;pointer-events:none}
+#neb{background:radial-gradient(ellipse 60% 45% at 25% 30%,#2a1a5c88,transparent 70%),radial-gradient(ellipse 50% 40% at 78% 70%,#0f2a6a77,transparent 70%),radial-gradient(ellipse 35% 30% at 70% 18%,#4a1a6a55,transparent 70%);animation:rot 180s linear infinite;transform-origin:50% 50%;scale:1.4}
+@keyframes rot{to{rotate:360deg}}
+#gr{opacity:.09;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
+#cv{position:fixed;inset:0;width:100%;height:100%}
+#vp{position:fixed;inset:0;perspective:900px;overflow:hidden}
+#sun{--s:clamp(104px,15vw,200px);position:absolute;left:50%;top:50%;width:var(--s);height:var(--s);margin:calc(var(--s)/-2) 0 0 calc(var(--s)/-2);border-radius:50%;pointer-events:none}
+#sun::before{content:"";position:absolute;inset:-45%;border-radius:50%;background:radial-gradient(circle,#ffd98a55 0,#a78bfa33 42%,transparent 68%);animation:pu 6s ease-in-out infinite}
+#sun::after{content:"";position:absolute;inset:-7%;border-radius:50%;background:conic-gradient(#ffd98a,#a78bfa,#6aa8ff,#ffd98a);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));animation:spin 24s linear infinite}
+#sun img{position:relative;z-index:1;display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 20%;box-shadow:0 0 60px #ffd98a77}
+@keyframes pu{50%{transform:scale(1.12);opacity:.8}}@keyframes spin{to{rotate:360deg}}
+#st{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .4s ease-out}
+.c{--w:clamp(170px,27vw,350px);--h:calc(var(--w)*.75);position:absolute;left:50%;top:50%;width:var(--w);margin:calc(var(--h)/-2) 0 0 calc(var(--w)/-2);padding:0;border:0;background:none;color:inherit;cursor:pointer;text-align:left;will-change:transform,opacity}
+.c img{display:block;width:100%;height:var(--h);object-fit:cover;border-radius:3px;box-shadow:0 0 0 1px #ffffff22,0 18px 60px -10px #7c5cff66;transition:box-shadow .3s}
+.c:hover img,.c:focus-visible img,.c.hov img{box-shadow:0 0 0 1px #fff8,0 18px 80px -6px #a78bfaaa}
+.c span{display:block;margin-top:.55rem;font:500 11px var(--m);letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+header{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:var(--t) clamp(1rem,3vw,2.2rem) 0;pointer-events:none}
+header>*{pointer-events:auto}
+.logo{font:800 clamp(1.6rem,3vw,2.2rem)/1 var(--d);letter-spacing:-.05em;text-decoration:none}.logo i{color:var(--ac);font-style:normal}
+nav{display:flex;gap:clamp(.8rem,2.4vw,2rem)}
+nav a{font:500 12px var(--m);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--mut);padding:.5rem 0;transition:color .2s}nav a:hover{color:var(--tx)}
+@media(max-width:560px){header{flex-direction:column;align-items:flex-start;gap:0}nav{gap:1rem}nav a{font-size:10.5px;letter-spacing:.1em}#hint{bottom:calc(78px + env(safe-area-inset-bottom,0px))!important}.c span{font-size:9.5px}}
+#hint{position:fixed;left:clamp(1rem,3vw,2.2rem);bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:10;font:500 11px var(--m);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+#pg{position:fixed;right:0;top:0;width:2px;height:100%;z-index:10;background:linear-gradient(var(--ac),var(--ac)) 0 0/100% 0 no-repeat}
+#ide{position:fixed;right:clamp(.8rem,2vw,1.6rem);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:15;width:min(330px,calc(100vw - 1.6rem));background:#0a0a14cc;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid #ffffff1f;border-radius:10px;font:400 11.5px/1.6 var(--m);overflow:hidden;transition:width .3s;animation:up .9s .3s both}
+@keyframes up{from{opacity:0;transform:translateY(20px)}}
+#ide .bar{display:flex;align-items:center;gap:6px;padding:.55rem .8rem;border-bottom:1px solid #ffffff14;background:#ffffff08}
+#ide .bar b{width:9px;height:9px;border-radius:50%;background:#3a3a4c}#ide .bar span{margin-left:.6rem;color:var(--mut);font-size:11px}
+#ide .bar button{margin-left:auto;background:none;border:0;color:var(--mut);cursor:pointer;font:inherit;padding:.2rem .4rem}
+#code{margin:0;padding:.9rem 1rem;white-space:pre-wrap;min-height:12.6em;color:#cfd0e6}
+#ide.min #code{display:none}#ide.min{width:auto;min-width:176px}
+#code .k{color:#c792ea}#code .s{color:#c3e88d}#code .cm{color:#5c5f77;font-style:italic}#code .p{color:#82aaff}#code .v{color:#ffcb6b}
+#cur{display:inline-block;width:7px;height:1em;background:var(--ac);vertical-align:-2px;animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+#pj{position:fixed;inset:0;z-index:40;background:#04040afa;overflow:auto;visibility:hidden;opacity:0;transition:opacity .4s,visibility .4s}
+#pj.on{visibility:visible;opacity:1}
+#pj .w{max-width:1040px;margin:0 auto;padding:calc(80px + env(safe-area-inset-top,0px)) clamp(1rem,4vw,2rem) 5rem}
+#pj h2{font:800 clamp(2.4rem,7vw,5rem)/.95 var(--d);letter-spacing:-.04em;margin:.4rem 0 1rem}
+#pj .cat{font:500 12px var(--m);letter-spacing:.16em;text-transform:uppercase;color:var(--ac)}
+#pj p{max-width:60ch;color:#b7b7cc;margin:0 0 1.2rem}
+#pj .hero{width:100%;border-radius:4px;display:block;margin:1.5rem 0;box-shadow:0 30px 100px -30px #7c5cff77;max-height:78vh;object-fit:contain;background:#0a0a14}
+#pj .lk{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.5rem}
+#pj .lk a{font:500 12px var(--m);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid #ffffff33;padding:.6rem 1rem;border-radius:99px}#pj .lk a:hover{background:var(--ac);color:#0a0a14;border-color:var(--ac)}
+#pj .gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1rem;margin-top:1rem}
+#pj .gal img{width:100%;border-radius:4px;display:block;background:#0a0a14}
+#cl{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));right:clamp(1rem,3vw,2.2rem);z-index:50;font:500 12px var(--m);letter-spacing:.14em;text-transform:uppercase;color:var(--tx);background:#0a0a14;border:1px solid #ffffff33;border-radius:99px;padding:.6rem 1.1rem;cursor:pointer;visibility:hidden}
+.c.fd::before{content:"";position:absolute;left:0;top:-13px;width:38%;height:15px;background:linear-gradient(#c4b5ff,#a78bfa);border-radius:7px 7px 0 0}
+.c.fd img{box-shadow:0 0 0 2px #a78bfa,0 18px 60px -10px #7c5cffaa}
+.fg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:1.2rem;margin-top:1.5rem}
+.it{background:none;border:0;color:inherit;text-align:left;cursor:pointer;padding:0;font:inherit}
+.it img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;display:block;box-shadow:0 0 0 1px #ffffff22;transition:transform .3s}.it:hover img,.it:focus-visible img{transform:translateY(-3px)}
+.it span{display:block;margin-top:.55rem;font:800 1.15rem var(--d);letter-spacing:-.02em}.it small{color:var(--mut);font:500 11px var(--m);letter-spacing:.12em;text-transform:uppercase}
+.bk{background:none;border:0;color:var(--ac);font:500 12px var(--m);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;padding:0;margin-bottom:1rem}
+#pj.on~#cl{visibility:visible}
+.sr{position:absolute;left:-999px}
+@media(prefers-reduced-motion:reduce){#sun::before,#sun::after{animation:none}#neb{animation:none}#ide{animation:none}#cur{animation:none}#st{transition:none}}
+</style></head>
+<body>
+<a class="sr" href="#sp" onfocus="this.style.left='1rem'" onblur="this.style.left='-999px'">Skip to projects</a>
+<div class="fx" id="neb"></div><canvas id="cv" aria-hidden="true"></canvas><div class="fx" id="gr"></div>
+<header><a class="logo" href="#" aria-label="dibia, back to top">dibia<i>.</i></a>
+<nav aria-label="Links"><a id="n-c" href="#">Contact</a><a id="n-l" target="_blank" rel="noopener" href="#">LinkedIn</a><a id="n-w" target="_blank" rel="noopener" href="#">WhatsApp</a><a id="n-b" target="_blank" rel="noopener" href="#">Behance</a></nav></header>
+<main><div id="sp"></div><div id="vp"><div id="sun" role="img" aria-label="Portrait of dibia"><img src="resources/portrait-cartoon.svg" alt="" draggable="false"></div><div id="st" role="list" aria-label="Projects"></div></div></main>
+<div id="pg"></div><div id="hint">Scroll to travel · It never ends · Tap a world</div>
+<aside id="ide" aria-label="About dibia"><div class="bar"><b></b><b></b><b></b><span>about.dibia</span><button id="tg" aria-label="Collapse panel" aria-expanded="true">–</button></div><pre id="code"></pre></aside>
+<div id="pj" role="dialog" aria-modal="true" aria-labelledby="pt"><div class="w" id="pw"></div></div><button id="cl">Close ✕</button>
+<script>
+/* ---- EDIT ME: links and projects ---- */
+const LINKS={email:'sosthenespatrick@gmail.com',linkedin:'https://www.linkedin.com/in/sosthenes-ezeobodo-774a2a443/',whatsapp:'https://wa.me/message/5S3NUNAIWRU6G1',behance:'https://www.behance.net/patricksosthen'};
+const R='resources/projects/';
+const PROJECTS=[
+{id:'hairs-by-winnie',title:'Hairs by Winnie',category:'Branding',description:'Logo and brand identity for a premium human hair brand: a gold W monogram with a crowned woman, applied to a billboard, bags, a mug, a T-shirt and thank-you cards.',cover:R+'hairs-by-winnie/cover.jpg',gallery:['image-01','image-02','image-03'].map(x=>R+'hairs-by-winnie/'+x+'.jpg')},
+{id:'whispers-chat-app',title:'Whispers Chat App',category:'UI/UX',description:'Mobile UI for a secure team messaging app: simple, smooth and end-to-end encrypted, in black, white and deep indigo. Created for #100daysofUI.',cover:R+'whispers-chat-app/cover.jpg',gallery:['image-01','image-02','image-03','image-04','image-05'].map(x=>R+'whispers-chat-app/'+x+'.jpg'),links:[['View on Behance','https://www.behance.net/gallery/201538699/Whispers-Chat-App']]},
+{id:"red-camel-cafeteria",folder:"logos",title:"Red Camel Cafeteria",category:"Logo Design",description:"Logo for a classic restaurant with state-of-the-art cooking and setting that handles all sorts of catering. The client wanted a detailed brand logo: a red camel outline over a chef, flames and a cooking pot.",cover:R+"red-camel-cafeteria/cover.jpg",gallery:[]},
+{id:'stryd-footwear',title:'STRYD Footwear',category:'Web Development',description:'Multi-page e-commerce site for a premium footwear brand: near-black, gold accent and elegant serif headlines.',cover:R+'stryd-footwear/cover.jpg',pos:'center 55%',gallery:[],links:[['Visit live site','https://stryd-gamma.vercel.app']]},
+{id:'sinzu',title:'Sinzu',category:'UI/UX',description:"Mobile UI/UX design for Sinzu, a shopping app built on the idea that shopping should be a delightful, seamless experience that fits a busy lifestyle. The screens cover onboarding and sign-up, a home with brand categories and Best Deals, a cart and a checkout confirmation, in green, blue and yellow with Century Gothic. Created for #100daysofUI 2024.",cover:R+'sinzu/cover.jpg',gallery:['image-01','image-02','image-03','image-04'].map(x=>R+'sinzu/'+x+'.jpg')},
+{id:"fathercat-studio",folder:"logos",title:"FatherCat Photography Studio",category:"Logo Design",description:"Logo for a renowned photo studio in Sokoto State, Nigeria. The client wanted a unique brand logo: a cat silhouette sitting on a camera-lens emblem, with a signature-style wordmark.",cover:R+"fathercat-studio/cover.jpg",gallery:[]},
+{id:'lionstorms',title:'Lionstorms International',category:'Web Design',description:'Corporate website for a Nigerian contracting and procurement company, in navy and gold from its lion shield logo.',cover:R+'lionstorms/cover.jpg',gallery:[],links:[['Visit live site','https://lionstorms.vercel.app/']]},
+{id:"deenee-photo-studio",folder:"logos",title:"DeeNee Photo Studio",category:"Logo Design",description:"Logo for a renowned photo studio in Sokoto State, Nigeria that specializes in high-quality photos. The client wanted a unique brand logo, so I drew an elegant handwritten wordmark in white on black.",cover:R+"deenee-photo-studio/cover.jpg",gallery:[]},
+{id:"switch-mobile",folder:"logos",title:"Switch Mobile Technologies",category:"Logo Design",description:"Logo for a mobile technology firm that focuses on refurbishing iPhones. The client wanted a logo that fits the company name: a switching-arrows S and a signal icon over the wordmark.",cover:R+"switch-mobile/cover.jpg",gallery:[]},
+{id:"ahmed-rabiu",folder:"logos",title:"Ahmed Rabiu Consultancy",category:"Logo Design",description:"Company logo for a consultancy firm. The client wanted a logo that captured the initials of the company: an A and R set inside golden crescent strokes.",cover:R+"ahmed-rabiu/cover.jpg",gallery:[]},
+{id:"janbeera-agro",folder:"logos",title:"Janbeera Aggregate Agro Ltd",category:"Company Profile",description:"Company profile for an agro-allied company covering smart farming, supply, production, processing, fabrication and their value chain. The goal was to present its core values in a colorful way and show how it stands neck and shoulders above its peers. Shown here: the company logo.",cover:R+"janbeera-agro/cover.jpg",gallery:[]},
+{id:"caliphate-talent-hunt",folder:"logos",title:"Caliphate Talent Hunt",category:"Logo Design",description:"Event logo for the Sokoto State Government. The client wanted a logo that fit the event name: a figure and a magnifying glass over the map outline.",cover:R+"caliphate-talent-hunt/cover.jpg",gallery:[]},
+{id:"beerab-bespoke",folder:"logos",title:"BeeRab BeSpoke Clothings",category:"Tag Design",description:"Tag design for a new clothing business with eye-catching, luxurious designs for all genders. The client wanted a unique tag for their products: flowing script lettering with a needle motif and ornate corner flourishes.",cover:R+"beerab-bespoke/cover.jpg",gallery:[]},
+{id:"social-profile-ui",folder:"ui",title:"Social Media Profile Page",category:"UI Design",description:"Day 6 design prompt: a profile page for a social media account. The prompt dealt with layers and color selection, so the design is clean and aesthetic, with a faded cover photo, verified name, stats, a spotlight row and a post grid.",cover:R+"social-profile-ui/cover.jpg",gallery:[]},
+{id:"voluntia",folder:"ui",title:"Voluntia",category:"UI Design",description:"Mobile app concept for volunteers, built on the idea that money is not the only way to help. A green splash screen with a tree of colorful hands, and a welcome-back login screen with email, Facebook, Google and Apple sign-in.",cover:R+"voluntia/cover.jpg",gallery:[]},
+{id:"sun-dry",folder:"ui",title:"Sun Dry",category:"UI Design",description:"Landing page and app preview for a delivery laundry service: a dark hero with the headline Delivery Laundry Service, customer reviews, Google Play and App Store buttons, and a phone showing the app with laundry categories and order progress.",cover:R+"sun-dry/cover.jpg",gallery:[]},
+{id:"red-camel-app",folder:"ui",title:"Red Camel App Icon & Splash",category:"UI Design",description:"Mobile app splash screen and home-screen icon for Red Camel Cafeteria, using the brand's camel logo in white on its signature red.",cover:R+"red-camel-app/cover.jpg",gallery:[]}];
+const FOLDERS=[{id:'ui',title:'UI Designs',description:'Mobile and web interface concepts and screens.',cover:R+'folders/ui.jpg'},{id:'logos',title:'Logos',description:'Logo, tag and brand-mark work for businesses and events.',cover:R+'folders/logos.jpg'}];
+FOLDERS.forEach(f=>f.items=PROJECTS.filter(p=>p.folder===f.id));
+const ORDER=['hairs-by-winnie','whispers-chat-app','folder:logos','stryd-footwear','sinzu','folder:ui','lionstorms'];
+const ITEMS=ORDER.map(k=>k.startsWith('folder:')?FOLDERS.find(f=>f.id===k.slice(7)):PROJECTS.find(p=>p.id===k));
+const INTRO=`const designer = {
+  name: "dibia",
+  role: "Graphic Designer",
+  focus: ["Brand Identity", "Web Design", "UI/UX"],
+  philosophy: "Ideas deserve extraordinary visuals."
+};
+// scroll to travel deeper
+console.log("Welcome to my creative universe.");`;
+/* ---- engine ---- */
+const $=s=>document.querySelector(s),RM=matchMedia('(prefers-reduced-motion:reduce)').matches,N=ITEMS.length;
+$('#n-c').href='mailto:'+LINKS.email;$('#n-l').href=LINKS.linkedin;$('#n-w').href=LINKS.whatsapp;$('#n-b').href=LINKS.behance;
+const st=$('#st');
+const cards=ITEMS.map((p,i)=>{const b=document.createElement('button');b.className='c'+(p.items?' fd':'');b.setAttribute('role','listitem');b.setAttribute('aria-label','Open '+(p.items?'folder':'project')+': '+p.title);
+b.innerHTML=`<img src="${p.cover}" alt="" ${p.pos?`style="object-position:${p.pos}"`:''} draggable="false"><span>${p.title}${p.items?' · '+p.items.length:''}</span>`;
+b.onclick=e=>{if(e.detail===0)openItem(i,b)};st.appendChild(b);return b});
+let tu=0,cu=0,mx=0,my=0,dirty=true,L=1,lastW=innerWidth;const sp=$('#sp');
+/* endless loop: the scroll range is 5 laps tall; whenever you leave the middle laps we jump 2 laps (same picture) */
+function layout(){const f=(((cu%N)+N)%N)/N;L=innerHeight*N*.95;sp.style.height=(5*L+innerHeight)+'px';const y=(2+f)*L;scrollTo(0,y);tu=cu=y/L*N}
+if('scrollRestoration' in history)history.scrollRestoration='manual';
+addEventListener('scroll',()=>{let y=scrollY;if(y<L||y>4*L){const s=y<L?2*L:-2*L;y+=s;scrollTo(0,y);cu+=s/L*N}tu=y/L*N;dirty=true},{passive:true});
+addEventListener('pointermove',e=>{if(RM)return;mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;dirty=true},{passive:true});
+function render(){
+ const mob=innerWidth<700,k=mob?.85:Math.max(.5,Math.min(innerWidth,1100)/1100),xs=mob?.5:1.45,ys=mob?1.2:.68,P=((cu%N)+N)%N;
+ st.style.transform=`rotateX(${-my*4}deg) rotateY(${mx*6}deg)`;
+ cards.forEach((c,i)=>{let v=i-P;v=((v+1.7)%N+N)%N-1.7;const a=v*1.15+2.3,av=Math.abs(v);
+  const r=((mob?135:250)+Math.min(av,4)*(mob?120:185)+(v<0?-v*180:0))*k,x=Math.cos(a)*r*xs,y=Math.sin(a)*r*ys-(v>0?v*30*k:0);
+  const z=v>=0?-v*330:-v*620;
+  let o=v<-1.15?1-(-1.15-v)/.5:v>3?(4.3-v)/1.3:1;o=Math.max(0,Math.min(1,o));
+  c.style.transform=`translate3d(${x}px,${y}px,${z}px) rotateZ(${Math.sin(a)*9}deg) rotateY(${-x*.035}deg)`;
+  c._z=z;c._o=o;c.style.opacity=o;c.style.visibility=o<.03?'hidden':'visible';
+  c.style.filter=v>1.5?`blur(${Math.min(3.5,(v-1.5)*.8).toFixed(1)}px)`:'none'});
+ $('#pg').style.backgroundSize='100% '+(P/N*100)+'%';
+}
+/* stars + shooting stars */
+const cv=$('#cv'),g=cv.getContext('2d');let S=[],sh=null,W,H;
+function size(){const d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;g.setTransform(d,0,0,d,0,0);
+ const n=Math.round(W*H/(W<700?9000:6500));S=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,z:Math.random()*.9+.1,t:Math.random()*6}))}
+addEventListener('resize',()=>{size();if(innerWidth!==lastW){lastW=innerWidth;layout()}dirty=true});size();layout();
+let nextSh=performance.now()+6000;
+function sky(t){g.clearRect(0,0,W,H);
+ for(const s of S){if(!RM){s.y-=s.z*.05;s.x+=s.z*.03;if(s.y<0)s.y=H;if(s.x>W)s.x=0}
+  g.globalAlpha=(.35+.45*Math.sin(t/900+s.t))*s.z+.1;g.fillStyle=s.z>.8?'#cfd6ff':'#fff';g.fillRect(s.x,s.y,s.z*1.6,s.z*1.6)}
+ if(!RM){if(!sh&&t>nextSh){sh={x:Math.random()*W*.8,y:Math.random()*H*.4,l:0};nextSh=t+9000+Math.random()*9000}
+  if(sh){sh.l+=1;const a=1-sh.l/40;g.globalAlpha=Math.max(0,a);g.strokeStyle='#d8ccff';g.lineWidth=1.4;g.beginPath();g.moveTo(sh.x+sh.l*9,sh.y+sh.l*4.5);g.lineTo(sh.x+sh.l*9-70,sh.y+sh.l*4.5-35);g.stroke();if(sh.l>40)sh=null}}}
+function loop(t){const d=tu-cu;if(Math.abs(d)>.0003){cu=RM?tu:cu+d*.085;dirty=true}
+ if(dirty){render();dirty=false}sky(t);requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+/* IDE typing */
+const code=$('#code'),ide=$('#ide');
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const hl=t=>esc(t).replace(/(\/\/.*)|("[^"]*"?)|\b(const|log)\b|\b(\w+)(?=:)|\b(designer|console)\b/g,(m,c,s,k,p,v)=>c?`<span class="cm">${c}</span>`:s?`<span class="s">${s}</span>`:k?`<span class="k">${k}</span>`:p?`<span class="p">${p}</span>`:`<span class="v">${v}</span>`);
+const paint=n=>{code.innerHTML=hl(INTRO.slice(0,n))+'<span id="cur"></span>'};
+if(RM){paint(INTRO.length);autoMin()}else{let n=0;setTimeout(function tick(){paint(++n);if(n<INTRO.length)setTimeout(tick,INTRO[n-1]==='\n'?160:12+Math.random()*26);else autoMin()},1100)}
+const tg=$('#tg');const setMin=m=>{ide.classList.toggle('min',m);tg.textContent=m?'+':'–';tg.setAttribute('aria-expanded',!m);tg.setAttribute('aria-label',m?'Expand panel':'Collapse panel')};
+let userTog=0;const autoMin=()=>setTimeout(()=>{if(!userTog&&innerWidth>=700)setMin(true)},3500);tg.onclick=()=>{userTog=1;setMin(!ide.classList.contains('min'))};if(innerWidth<700)setMin(true);
+/* hit-testing: every visible project in frame is clickable, front-most wins (browser 3D hit-testing only reached the front card) */
+const vp=$('#vp');let hov=-1;
+function pick(x,y){let best=-1,bs=-1e9;cards.forEach((c,i)=>{if(!(c._o>=.1))return;const r=c.querySelector('img').getBoundingClientRect();
+ const s=(c._o>=.5?1e6:0)+c._z;if(x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom&&s>bs){bs=s;best=i}});return best}
+vp.addEventListener('click',e=>{if(pj.classList.contains('on'))return;const i=pick(e.clientX,e.clientY);if(i>-1)openItem(i,cards[i])});
+vp.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;const i=pick(e.clientX,e.clientY);if(i!==hov){if(hov>-1)cards[hov].classList.remove('hov');if(i>-1)cards[i].classList.add('hov');hov=i;vp.style.cursor=i>-1?'pointer':''}});
+/* project detail + folders */
+const pj=$('#pj'),pw=$('#pw'),cl=$('#cl');let opener=null,parent=null;
+function openItem(i,btn){opener=btn;const p=ITEMS[i];if(p.items)showFolder(p);else showProject(p,btn.querySelector('img'));pj.classList.add('on');document.documentElement.style.overflow='hidden';pj.scrollTop=0;cl.focus({preventScroll:true})}
+function showFolder(f){parent=null;pw.innerHTML=`<div class="cat">Folder · ${f.items.length} items</div><h2 id="pt">${f.title}</h2><p>${f.description}</p><div class="fg">${f.items.map((p,k)=>`<button class="it" data-k="${k}"><img loading="lazy" src="${p.cover}" alt=""><span>${p.title}</span><small>${p.category}</small></button>`).join('')}</div>`;
+ pw.querySelectorAll('.it').forEach(b=>b.onclick=()=>{showProject(f.items[+b.dataset.k],b.querySelector('img'),f);pj.scrollTop=0})}
+function showProject(p,imgEl,f){parent=f||null;const from=imgEl.getBoundingClientRect();
+ pw.innerHTML=`${f?`<button class="bk" id="bk">← ${f.title}</button>`:''}<div class="cat">${p.category}</div><h2 id="pt">${p.title}</h2><p>${p.description}</p>${p.links?`<div class="lk">${p.links.map(l=>`<a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a>`).join('')}</div>`:''}<img class="hero" src="${p.cover}" alt="${p.title} artwork">${p.gallery.length?`<div class="gal">${p.gallery.map(s=>`<img loading="lazy" src="${s}" alt="${p.title} gallery image">`).join('')}</div>`:''}`;
+ if(f)$('#bk').onclick=()=>{showFolder(f);pj.scrollTop=0};
+ const h=pw.querySelector('.hero');if(!RM){h.addEventListener('load',()=>zoom(h,from),{once:true});h.complete&&zoom(h,from)}}
+function zoom(h,f){if(h._z)return;h._z=1;const t=h.getBoundingClientRect();if(!t.width)return;
+ h.animate([{transformOrigin:'0 0',transform:`translate(${f.left-t.left}px,${f.top-t.top}px) scale(${f.width/t.width},${f.height/t.height})`},{transformOrigin:'0 0',transform:'none'}],{duration:650,easing:'cubic-bezier(.2,.8,.2,1)'})}
+function closeAll(){parent=null;pj.classList.remove('on');document.documentElement.style.overflow='';if(opener)opener.focus({preventScroll:true})}
+function back(){if(parent){const f=parent;showFolder(f);pj.scrollTop=0}else closeAll()}
+cl.onclick=closeAll;addEventListener('keydown',e=>{if(e.key==='Escape'&&pj.classList.contains('on'))back()});
+</script></body></html>
